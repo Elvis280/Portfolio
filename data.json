@@ -1,0 +1,147 @@
+{
+  "projects": [
+    {
+      "id": "carbontwin",
+      "name": "CARBONTWIN",
+      "description": "Carbon footprint tracking and analysis platform that helps users monitor and reduce their environmental impact through data visualization and actionable insights.",
+      "image": "project-carbontwin.png",
+      "techStack": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Web App"
+      ],
+      "github": "https://github.com/Elvis280/CarbonTwin",
+      "demo": "https://elvis280.github.io/CarbonTwin/"
+    },
+    {
+      "id": "crud-flask",
+      "name": "CRUD-FLASK",
+      "description": "Full-stack CRUD application built with Flask demonstrating RESTful API design, database operations, and modern web development practices.",
+      "image": "project-crud-flask.png",
+      "techStack": [
+        "Python",
+        "Flask",
+        "MySQL",
+        "REST API"
+      ],
+      "github": "https://github.com/Elvis280/CRUD-Flask",
+      "demo": "https://elvis04.pythonanywhere.com/"
+    },
+    {
+      "id": "nexa-ai",
+      "name": "NEXA_AI",
+      "description": "Personal AI agent experiment focused on agent workflows, LLM API integration, and task automation using Python.",
+      "image": "project-nexa.png",
+      "techStack": [
+        "Python",
+        "LLM APIs",
+        "Automation",
+        "Agents"
+      ],
+      "github": "https://github.com/Elvis280/NEXA_AI",
+      "demo": "https://nexa-ai-n6lv.onrender.com/"
+    },
+    {
+      "id": "ecowaste",
+      "name": "ECOWASTE",
+      "description": "Eco-friendly waste management platform designed to promote sustainable practices and help users properly categorize and dispose of waste materials.",
+      "image": "project-ecowaste.png",
+      "techStack": [
+        "JavaScript",
+        "React",
+        "Web App",
+        "Sustainability"
+      ],
+      "github": "https://github.com/Elvis280/EcoWaste",
+      "demo": "https://eco-waste-roan.vercel.app/"
+    },
+    {
+      "id": "agrowise",
+      "name": "AGROWISE",
+      "description": "AI-powered agricultural assistant prototype designed to help farmers with crop guidance and decision support using backend logic and API-driven AI features.",
+      "image": "project-agrowise.png",
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "AI APIs",
+        "Backend"
+      ],
+      "github": "",
+      "demo": ""
+    }
+  ],
+  "skills": [
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "FastAPI",
+    "Flask",
+    "MySQL",
+    "Git",
+    "GitHub",
+    "Docker",
+    "HTML/CSS",
+    "REST APIs",
+    "Gemini API",
+    "OpenAI"
+  ],
+  "experience": [
+    {
+      "id": "algozenith",
+      "title": "Technical Lead",
+      "organization": "AlgoZenith Student Chapter",
+      "period": "Aug 2025 – Present",
+      "description": "Leading coding sessions and problem-solving workshops, mentoring peers in programming fundamentals and DSA, and coordinating technical activities with the core team.",
+      "current": true,
+      "detailsPage": "experience-details/algozenith.html"
+    },
+    {
+      "id": "gfg",
+      "title": "Faculty Connect & PR Lead",
+      "organization": "GeeksforGeeks Student Chapter",
+      "period": "Oct 2024 – Present",
+      "description": "Managing faculty coordination and outreach for technical events, leading promotions to increase participation, and previously contributing as a Technical Coordinator.",
+      "current": true,
+      "detailsPage": "experience-details/gfg.html"
+    },
+    {
+      "id": "srdt",
+      "title": "Python Full-Stack Trainee",
+      "organization": "SRDT Training Program",
+      "period": "2024",
+      "description": "Built full-stack mini-projects using Python and Flask, implemented REST APIs, and worked on CRUD-based backend systems.",
+      "current": false,
+      "detailsPage": "experience-details/srdt.html"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert1",
+      "name": "Python for Everybody Specialization",
+      "issuer": "University of Michigan (Coursera)",
+      "date": "2024",
+      "credentialUrl": "https://coursera.org/verify/specialization/EXAMPLE123",
+      "verified": true
+    },
+    {
+      "id": "cert2",
+      "name": "Machine Learning Fundamentals",
+      "issuer": "Stanford Online",
+      "date": "2024",
+      "credentialUrl": "",
+      "verified": false
+    },
+    {
+      "id": "cert3",
+      "name": "FastAPI Development",
+      "issuer": "Udemy",
+      "date": "2023",
+      "credentialUrl": "",
+      "verified": true
+    }
+  ]
+}
