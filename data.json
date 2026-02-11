@@ -120,28 +120,132 @@
   ],
   "certificates": [
     {
-      "id": "cert1",
-      "name": "Python for Everybody Specialization",
-      "issuer": "University of Michigan (Coursera)",
-      "date": "2024",
-      "credentialUrl": "https://coursera.org/verify/specialization/EXAMPLE123",
-      "verified": true
+      "id": "google-ai-day",
+      "name": "Agentic AI Day (Google Cloud)",
+      "issuer": "Google Cloud Skill Boost",
+      "date": "2025",
+      "image": "certificates/Agentic AI Day.png",
+      "credentialUrl": "https://certificate.hack2skill.com/user/aidayideasubmission/2025H2S06AID-I14934",
+      "credentialId": "2025H2S06AID-I14934",
+      "verified": true,
+      "skills": [
+        "Agentic AI",
+        "Google Cloud",
+        "AI Agents",
+        "LLM Integration"
+      ]
     },
     {
-      "id": "cert2",
-      "name": "Machine Learning Fundamentals",
-      "issuer": "Stanford Online",
+      "id": "neo4j",
+      "name": "Neo4j Certification",
+      "issuer": "Neo4j",
       "date": "2024",
-      "credentialUrl": "",
-      "verified": false
+      "image": "certificates/Neo4j.png",
+      "credentialUrl": "https://graphacademy.neo4j.com/c/3439211c-c06e-490e-bee2-66dbcd2016e7/",
+      "credentialId": "3439211c-c06e-490e-bee2-66dbcd2016e7",
+      "verified": true,
+      "skills": [
+        "Graph Databases",
+        "Cypher Query Language",
+        "Neo4j",
+        "Data Modeling"
+      ]
     },
     {
-      "id": "cert3",
-      "name": "FastAPI Development",
-      "issuer": "Udemy",
-      "date": "2023",
-      "credentialUrl": "",
-      "verified": true
+      "id": "hela-blockchain",
+      "name": "HeLa Labs Blockchain",
+      "issuer": "Hela Labs",
+      "date": "2024",
+      "image": "certificates/HeLa Labs Blockchain.png",
+      "credentialUrl": "https://credsverse.com/credentials/4dcce8fe-ba40-435f-b881-6e9260f63258",
+      "credentialId": "4dcce8fe-ba40-435f-b881-6e9260f63258",
+      "verified": true,
+      "skills": [
+        "Blockchain",
+        "Smart Contracts",
+        "Web3",
+        "Distributed Systems"
+      ]
+    },
+    {
+      "id": "kaggle-ai-agents",
+      "name": "AI Agents Intensive Course with Google",
+      "issuer": "Kaggle",
+      "date": "2024",
+      "image": "certificates/AI Agents Intensive Course with Google.png",
+      "credentialUrl": "https://www.kaggle.com/certification/badges/elvis2804/105",
+      "credentialId": "elvis2804/105",
+      "verified": true,
+      "skills": [
+        "AI Agents",
+        "Machine Learning",
+        "Python",
+        "Kaggle"
+      ]
+    },
+    {
+      "id": "hackerrank-python",
+      "name": "Introduction to Programming Using Python",
+      "issuer": "HackerRank",
+      "date": "2024",
+      "image": "certificates/Programming Using Python.png",
+      "credentialUrl": "https://www.hackerrank.com/certificates/812232d025d9",
+      "credentialId": "812232D025D9",
+      "verified": true,
+      "skills": [
+        "Python",
+        "Programming Fundamentals",
+        "Algorithms",
+        "Problem Solving"
+      ]
+    },
+    {
+      "id": "ai-builders-lab",
+      "name": "AI Builders Lab",
+      "issuer": "Hack2skill",
+      "date": "2024",
+      "image": "certificates/AI Builders Lab.png",
+      "credentialUrl": "https://certificate.hack2skill.com/user/aibuilderslab2/2024H2S10AIBL-P200273",
+      "credentialId": "2024H2S10AIBL-P200273",
+      "verified": true,
+      "skills": [
+        "AI Development",
+        "Machine Learning",
+        "Model Training",
+        "AI Applications"
+      ]
+    },
+    {
+      "id": "tableau-analytics",
+      "name": "Data Analytics with Specialization in Tableau",
+      "issuer": "Jobaaj",
+      "date": "2024",
+      "image": "certificates/Data Analytics with Specialization in Tableau.png",
+      "credentialUrl": "https://www.jobaajlearnings.com//certificate?file=certificate-329792-37-0.jpeg",
+      "credentialId": "AECP959972",
+      "verified": true,
+      "skills": [
+        "Tableau",
+        "Data Visualization",
+        "Data Analysis",
+        "Business Intelligence"
+      ]
+    },
+    {
+      "id": "tata-crucible",
+      "name": "TATA Crucible Campus Quiz",
+      "issuer": "Unstop",
+      "date": "2024",
+      "image": "certificates/TATA Crucible Campus Quiz.png",
+      "credentialUrl": "https://unstop.com/certificate-preview/991da870-b4e4-4edb-864f-058a2aa4f4d1",
+      "credentialId": "991da870-b4e4-4edb-864f-058a2aa4f4d1",
+      "verified": true,
+      "skills": [
+        "General Knowledge",
+        "Quiz Competition",
+        "Problem Solving",
+        "Critical Thinking"
+      ]
     }
   ]
 }

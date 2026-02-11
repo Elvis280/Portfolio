@@ -33,7 +33,12 @@
         <div class="overlay-ui">
             <div class="header">
                 <div class="logo">ElVis</div>
-                <nav class="top-nav">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="top-nav nav-links" id="nav-links">
                     <a href="#" data-target="0">HOME</a>
                     <a href="#" data-target="0.25">PROJECTS</a>
                     <a href="#" data-target="0.4">SKILLS</a>
@@ -154,9 +159,16 @@
 
             <section class="module certificates-module">
                 <h3 class="section-title">// CREDENTIALS_VERIFIED</h3>
-                <div class="certificates-grid" id="certificates-container">
-                    <!-- Certificates will be dynamically inserted from data.json -->
+                <div class="cert-carousel-wrapper">
+                    <button class="cert-carousel-btn cert-prev" aria-label="Previous certificates">‹</button>
+                    <div class="certificates-carousel">
+                        <div class="certificates-grid" id="certificates-container">
+                            <!-- Certificates will be dynamically inserted from data.json -->
+                        </div>
+                    </div>
+                    <button class="cert-carousel-btn cert-next" aria-label="Next certificates">›</button>
                 </div>
+                <div class="cert-carousel-dots" id="cert-dots"></div>
             </section>
 
             <section class="module contact-module">

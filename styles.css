@@ -1005,25 +1005,67 @@ body {
     text-shadow: 0 0 10px var(--accent-secondary);
 }
 
+/* Carousel Wrapper */
+.cert-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.certificates-carousel {
+    overflow: hidden;
+    width: 800px;
+    max-width: 800px;
+}
+
 .certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    width: 100%;
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cert-card {
-    background: rgba(5, 2, 10, 0.85);
-    border: 1px solid rgba(0, 243, 255, 0.2);
-    padding: 25px;
-    backdrop-filter: blur(10px);
+    background: transparent;
+    border: 2px solid var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    padding: 0;
+    backdrop-filter: blur(5px);
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    width: 800px;
+    min-width: 800px;
+    max-width: 800px;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+/* Certificate Preview Image */
+.cert-preview {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+    position: relative;
+}
+
+.cert-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.cert-card:hover .cert-preview img {
+    transform: scale(1.05);
 }
 
 .cert-card::before {
@@ -1053,9 +1095,21 @@ body {
 }
 
 .cert-badge {
-    font-size: 2.5rem;
-    flex-shrink: 0;
-    filter: grayscale(0.5);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--accent-secondary);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+    z-index: 1;
     transition: all 0.3s;
 }
 
@@ -1070,26 +1124,30 @@ body {
 
 .cert-content {
     flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
 .cert-content h4 {
-    color: var(--text-color);
-    font-size: 1.05rem;
-    margin-bottom: 8px;
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+    margin: 0 0 12px 0;
     letter-spacing: 1px;
+    line-height: 1.4;
 }
 
 .cert-issuer {
     color: var(--accent-secondary);
-    font-size: 0.85rem;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    margin-bottom: 8px;
     font-weight: 500;
 }
 
 .cert-date {
     color: #888;
-    font-size: 0.8rem;
-    margin-bottom: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
     font-family: monospace;
 }
 
@@ -1403,4 +1461,780 @@ body {
     width: 5px;
     background: var(--accent-secondary);
     height: 100%;
+}
+
+/* Carousel Navigation Buttons and Dots - Add to styles.css after cert-content section */
+
+/* Carousel Buttons */
+.cert-carousel-btn {
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.cert-carousel-btn:hover {
+    background: rgba(0, 243, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+/* Carousel Dots */
+.cert-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.cert-carousel-dots .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cert-carousel-dots .carousel-dot.active {
+    background: var(--accent-secondary);
+    box-shadow: 0 0 10px var(--accent-secondary);
+    transform: scale(1.3);
+}
+
+.cert-carousel-dots .carousel-dot:hover {
+    background: rgba(0, 243, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .certificates-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .cert-carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-carousel-wrapper {
+        gap: 10px;
+    }
+
+    .cert-preview {
+        height: 180px;
+    }
+}
+
+/* Image Wrapper - Full card size */
+.cert-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+/* Full Certificate Image */
+.cert-full-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Overlay with Blur */
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 2, 10, 0.15);
+    backdrop-filter: blur(0px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    padding: 30px;
+}
+
+.cert-card:hover .cert-overlay {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    background: rgba(5, 2, 10, 0.85);
+}
+
+.cert-card:hover .cert-full-image {
+    transform: scale(1.05);
+}
+
+/* Badge on Overlay */
+.cert-badge-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-secondary);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+}
+
+/* Overlay Content */
+.cert-overlay-content {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.cert-overlay-content h4 {
+    color: var(--accent-primary);
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.cert-overlay-content .cert-issuer {
+    color: var(--accent-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.cert-overlay-content .cert-date {
+    color: #aaa;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+}
+
+/* Skills Section on Hover */
+.cert-skills {
+    margin: 12px 0;
+    text-align: center;
+}
+
+.cert-skills strong {
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cert-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: rgba(0, 243, 255, 0.15);
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 243, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* View Credential Link on Overlay */
+.cert-link-overlay {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 20px;
+    background: rgba(0, 243, 255, 0.2);
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.cert-link-overlay:hover {
+    background: rgba(0, 243, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Certificate Image Wrapper - Transparent Background */
+.cert-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 3px solid var(--accent-secondary);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.4), inset 0 0 50px rgba(0, 243, 255, 0.1);
+    background: transparent;
+}
+
+.cert-full-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: transparent;
+    transition: transform 0.3s ease;
+}
+
+/* Add spacing to push experience section lower */
+.experience-module {
+    margin-top: 100px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE & TABLET
+   ======================================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .cert-card {
+        width: 600px;
+        min-width: 600px;
+        max-width: 600px;
+    }
+
+    .certificates-carousel {
+        width: 600px;
+        max-width: 600px;
+    }
+
+    .cert-image-wrapper {
+        height: 350px;
+    }
+}
+
+/* Mobile Landscape & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .cert-card {
+        width: 90vw;
+        min-width: 90vw;
+        max-width: 500px;
+    }
+
+    .certificates-carousel {
+        width: 90vw;
+        max-width: 500px;
+    }
+
+    .cert-carousel-wrapper {
+        gap: 10px;
+    }
+
+    .cert-carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .cert-image-wrapper {
+        height: 300px;
+    }
+
+    .experience-module {
+        margin-top: 60px;
+    }
+}
+
+/* Mobile Portrait (max-width: 480px) */
+@media (max-width: 480px) {
+    .cert-card {
+        width: 95vw;
+        min-width: 95vw;
+        max-width: 95vw;
+    }
+
+    .certificates-carousel {
+        width: 95vw;
+        max-width: 95vw;
+    }
+
+    .cert-carousel-wrapper {
+        gap: 5px;
+    }
+
+    .cert-carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .cert-image-wrapper {
+        height: 250px;
+        border-width: 2px;
+    }
+
+    .cert-overlay-content h4 {
+        font-size: 1rem;
+    }
+
+    .cert-skill-tags {
+        gap: 4px;
+    }
+
+    .skill-tag {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+
+    .experience-module {
+        margin-top: 40px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mobile: 320px - 768px */
+@media (max-width: 768px) {
+
+    /* Navigation - Hamburger Menu */
+    nav {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(5, 2, 10, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        border-left: 2px solid var(--accent-secondary);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .skill-item {
+        padding: 15px;
+    }
+
+    .skill-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Projects Section */
+    .project-carousel-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project-card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    /* Certificates */
+    .cert-carousel-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .certificates-carousel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cert-card {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .cert-image-wrapper {
+        height: 300px;
+    }
+
+    .cert-carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    /* Experience */
+    .experience-module {
+        margin-top: 60px;
+    }
+
+    .exp-block {
+        padding: 20px;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    /* General Spacing */
+    .module {
+        padding: 40px 20px;
+    }
+}
+
+/* Tablet: 768px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Certificates */
+    .certificates-carousel {
+        width: 600px;
+        max-width: 600px;
+    }
+
+    .cert-card {
+        width: 600px;
+        min-width: 600px;
+        max-width: 600px;
+    }
+
+    .experience-module {
+        margin-top: 80px;
+    }
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--accent-secondary);
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .status-indicator {
+        display: none;
+    }
+}
+/* ========================================
+   MOBILE UI FIXES
+   ======================================== */
+
+/* Fix: Background grid doesn't block clicks */
+.background-grid {
+    pointer-events: none;
+}
+
+/* Fix: Hamburger menu clickable */
+.hamburger {
+    pointer-events: auto !important;
+}
+
+/* Fix: Allow overlay UI children to be interactive */
+.overlay-ui {
+    pointer-events: none;
+}
+
+.overlay-ui > * {
+    pointer-events: auto;
+}
+
+/* Fix: Better mobile proportions */
+@media (max-width: 768px) {
+    .hamburger {
+        padding: 8px;
+        margin-right: 10px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .main-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   COMPREHENSIVE MOBILE FIXES
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Fix: Contact section - 2x2 grid instead of 4 columns */
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+    
+    .contact-card {
+        min-height: 150px;
+        padding: 20px 15px;
+    }
+    
+    .contact-value {
+        font-size: 0.85rem;
+        word-break: break-word;
+    }
+    
+    /* Fix: Hamburger larger hit area */
+    .hamburger {
+        padding: 15px !important;
+        margin: 0 5px;
+        min-width: 50px;
+        min-height: 50px;
+        justify-content: center;
+    }
+    
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+    }
+    
+    /* Fix: Hero section - prevent text overlap with HUD */
+    .hero-content {
+        padding: 20px;
+        margin-bottom: 80px;
+    }
+    
+    .main-title h1 {
+        font-size: 2rem !important;
+        margin: 20px 0;
+    }
+    
+    .footer-data {
+        bottom: 10px !important;
+        left: 10px !important;
+        gap: 15px;
+        font-size: 0.7rem;
+    }
+    
+    .data-block {
+        min-width: auto;
+    }
+    
+    /* Fix: Better mobile spacing */
+    .module {
+        padding: 30px 15px !important;
+    }
+    
+    .header {
+        padding: 10px 15px !important;
+    }
+}
+
+/* Fix: Reduce hero section size on mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh !important;
+        padding: 40px 15px !important;
+    }
+    
+    .main-title h1 {
+        font-size: 1.8rem !important;
+        margin: 15px 0 !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 0.9rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .hero-content p {
+        font-size: 0.85rem !important;
+        line-height: 1.4;
+        margin: 10px 0;
+    }
+    
+    .profile-image-wrapper {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .profile-container {
+        gap: 15px;
+    }
+}
+
+/* Fix: Even smaller hero text on mobile */
+@media (max-width: 768px) {
+    .main-title h1 {
+        font-size: 1.5rem !important;
+        letter-spacing: 2px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 0.8rem !important;
+    }
+    
+    .hero-content p {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* Add dark backdrop when mobile menu is open */
+.nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ensure mobile menu is above backdrop */
+@media (max-width: 768px) {
+    .nav-links {
+        z-index: 1002 !important;
+    }
+}
+
+/* Fix: Revert profile pic size and make hero text smaller on mobile */
+@media (max-width: 768px) {
+    /* Remove profile pic size override - let it stay original size */
+    .profile-image-wrapper {
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    /* Make hero text even smaller */
+    .main-title h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 0.75rem !important;
+    }
+    
+    .hero-content p {
+        font-size: 0.75rem !important;
+        line-height: 1.3;
+    }
 }

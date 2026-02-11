@@ -190,27 +190,123 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
+    // Certificate Carousel State
+    let certCarousel = {
+        currentSlide: 0,
+        certsPerPage: 1,
+        totalCerts: 0,
+        certificates: []
+    };
+
     function renderCertificates(certificates) {
         const container = document.getElementById('certificates-container');
         if (!container || !certificates) return;
 
+        certCarousel.certificates = certificates;
+        certCarousel.totalCerts = certificates.length;
+
         container.innerHTML = certificates.map(cert => `
             <div class="cert-card ${cert.verified ? 'verified' : ''}">
-                <div class="cert-badge">
-                    ${cert.verified ? '✓' : '📜'}
-                </div>
-                <div class="cert-content">
-                    <h4>${cert.name}</h4>
-                    <div class="cert-issuer">${cert.issuer}</div>
-                    <div class="cert-date">${cert.date}</div>
-                    ${cert.credentialUrl ? `
-                        <a href="${cert.credentialUrl}" target="_blank" class="cert-link">
-                            View Credential →
-                        </a>
-                    ` : ''}
-                </div>
+                ${cert.image ? `
+                    <div class="cert-image-wrapper">
+                        <img src="${cert.image}" alt="${cert.name}" loading="lazy" class="cert-full-image">
+                        <div class="cert-overlay">
+                            <div class="cert-badge-overlay">
+                                ${cert.verified ? '✓' : '📜'}
+                            </div>
+                            <div class="cert-overlay-content">
+                                <h4>${cert.name}</h4>
+                                <div class="cert-issuer">${cert.issuer}</div>
+                                <div class="cert-date">${cert.date}</div>
+                                ${cert.skills ? `
+                                    <div class="cert-skills">
+                                        <strong>Skills:</strong>
+                                        <div class="cert-skill-tags">
+                                            ${cert.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                                ${cert.credentialUrl ? `
+                                    <a href="${cert.credentialUrl}" target="_blank" class="cert-link-overlay">
+                                        View Credential →
+                                    </a>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                ` : ''}
             </div>
         `).join('');
+
+        initializeCertCarousel();
+    }
+
+    function initializeCertCarousel() {
+        const totalPages = Math.ceil(certCarousel.totalCerts / certCarousel.certsPerPage);
+
+        // Create dots
+        const dotsContainer = document.getElementById('cert-dots');
+        if (dotsContainer) {
+            dotsContainer.innerHTML = Array(totalPages).fill(0).map((_, i) =>
+                `<span class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></span>`
+            ).join('');
+
+            // Add click handlers to dots
+            dotsContainer.querySelectorAll('.carousel-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                    goToCertSlide(parseInt(dot.dataset.slide));
+                });
+            });
+        }
+
+        // Add button listeners
+        const prevBtn = document.querySelector('.cert-prev');
+        const nextBtn = document.querySelector('.cert-next');
+
+        if (prevBtn) prevBtn.addEventListener('click', () => certPrevSlide());
+        if (nextBtn) nextBtn.addEventListener('click', () => certNextSlide());
+
+        updateCertCarousel();
+    }
+
+    function goToCertSlide(slideIndex) {
+        const totalPages = Math.ceil(certCarousel.totalCerts / certCarousel.certsPerPage);
+        certCarousel.currentSlide = (slideIndex + totalPages) % totalPages;
+        updateCertCarousel();
+    }
+
+    function certPrevSlide() {
+        goToCertSlide(certCarousel.currentSlide - 1);
+    }
+
+    function certNextSlide() {
+        goToCertSlide(certCarousel.currentSlide + 1);
+    }
+
+    function updateCertCarousel() {
+        const container = document.getElementById('certificates-container');
+        const totalPages = Math.ceil(certCarousel.totalCerts / certCarousel.certsPerPage);
+
+        if (container) {
+            // Use pixel-based transform: card width (800px) + gap (30px)
+            const cardWidth = 800;
+            const gap = 30;
+            const offset = -certCarousel.currentSlide * (cardWidth + gap);
+            container.style.transform = `translateX(${offset}px)`;
+        }
+
+        // Update dots
+        const dots = document.querySelectorAll('#cert-dots .carousel-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === certCarousel.currentSlide);
+        });
+
+        // Update button visibility
+        const prevBtn = document.querySelector('.cert-prev');
+        const nextBtn = document.querySelector('.cert-next');
+
+        if (prevBtn) prevBtn.style.opacity = certCarousel.currentSlide === 0 ? '0.3' : '1';
+        if (nextBtn) nextBtn.style.opacity = certCarousel.currentSlide === totalPages - 1 ? '0.3' : '1';
     }
 
     // Call the loading function
@@ -440,3 +536,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// Mobile hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking a nav link
+    const navItems = navLinks.querySelectorAll('a');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
