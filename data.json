@@ -3,8 +3,8 @@
     {
       "id": "carbontwin",
       "name": "CARBONTWIN",
-      "description": "Carbon footprint tracking and analysis platform that helps users monitor and reduce their environmental impact through data visualization and actionable insights.",
-      "image": "project-carbontwin.png",
+      "description": "Designed an intuitive interface for tracking environmental impact. Focused on making complex carbon data easy to understand through clear visual hierarchy, interactive charts, and a clean dashboard layout that guides users toward actionable sustainability goals.",
+      "image": "images/carbontwin.png",
       "techStack": [
         "JavaScript",
         "HTML",
@@ -12,13 +12,14 @@
         "Web App"
       ],
       "github": "https://github.com/Elvis280/CarbonTwin",
-      "demo": "https://elvis280.github.io/CarbonTwin/"
+      "demo": "https://elvis280.github.io/CarbonTwin/",
+      "caseStudyPage": "case-studies/carbontwin.html"
     },
     {
       "id": "crud-flask",
       "name": "CRUD-FLASK",
-      "description": "Full-stack CRUD application built with Flask demonstrating RESTful API design, database operations, and modern web development practices.",
-      "image": "project-crud-flask.png",
+      "description": "Designed a clean admin dashboard interface with focus on data organization and form usability. Created intuitive navigation structure, responsive tables, and user-friendly forms that make data management straightforward and efficient.",
+      "image": "images/crud-flask.png",
       "techStack": [
         "Python",
         "Flask",
@@ -26,13 +27,14 @@
         "REST API"
       ],
       "github": "https://github.com/Elvis280/CRUD-Flask",
-      "demo": "https://elvis04.pythonanywhere.com/"
+      "demo": "https://elvis04.pythonanywhere.com/",
+      "caseStudyPage": "case-studies/crud-flask.html"
     },
     {
       "id": "nexa-ai",
       "name": "NEXA_AI",
-      "description": "Personal AI agent experiment focused on agent workflows, LLM API integration, and task automation using Python.",
-      "image": "project-nexa.png",
+      "description": "Designed a conversational interface for AI interactions. Focused on creating clear dialogue patterns, intuitive input methods, and responsive feedback that makes AI feel approachable. Emphasized visual clarity and user control throughout the experience.",
+      "image": "images/nexa-ai.png",
       "techStack": [
         "Python",
         "LLM APIs",
@@ -40,13 +42,14 @@
         "Agents"
       ],
       "github": "https://github.com/Elvis280/NEXA_AI",
-      "demo": "https://nexa-ai-n6lv.onrender.com/"
+      "demo": "https://nexa-ai-n6lv.onrender.com/",
+      "caseStudyPage": "case-studies/nexa-ai.html"
     },
     {
       "id": "ecowaste",
       "name": "ECOWASTE",
-      "description": "Eco-friendly waste management platform designed to promote sustainable practices and help users properly categorize and dispose of waste materials.",
-      "image": "project-ecowaste.png",
+      "description": "Created a visually engaging interface for waste categorization. Used color coding, clear iconography, and intuitive layouts to help users quickly identify proper disposal methods. Designed with sustainability in mind through eco-friendly color palettes and accessible navigation.",
+      "image": "images/ecowaste.png",
       "techStack": [
         "JavaScript",
         "React",
@@ -54,13 +57,14 @@
         "Sustainability"
       ],
       "github": "https://github.com/Elvis280/EcoWaste",
-      "demo": "https://eco-waste-roan.vercel.app/"
+      "demo": "https://eco-waste-roan.vercel.app/",
+      "caseStudyPage": "case-studies/ecowaste.html"
     },
     {
       "id": "agrowise",
       "name": "AGROWISE",
-      "description": "AI-powered agricultural assistant prototype designed to help farmers with crop guidance and decision support using backend logic and API-driven AI features.",
-      "image": "project-agrowise.png",
+      "description": "Designed an accessible agricultural assistant interface with farmers in mind. Created simple navigation, visual crop guidance, and clear information hierarchy that works well in field conditions. Focused on readability and touch-friendly interactions for mobile use.",
+      "image": "images/agrowise.png",
       "techStack": [
         "Python",
         "FastAPI",
@@ -68,26 +72,26 @@
         "Backend"
       ],
       "github": "",
-      "demo": ""
+      "demo": "",
+      "caseStudyPage": "case-studies/agrowise.html"
     }
   ],
   "skills": [
-    "Python",
+    "Figma",
+    "Canva",
+    "Adobe Express",
+    "HTML/CSS",
     "JavaScript",
-    "TypeScript",
     "React",
     "Next.js",
-    "Node.js",
+    "TypeScript",
+    "Git",
+    "GitHub",
+    "Python",
     "FastAPI",
     "Flask",
     "MySQL",
-    "Git",
-    "GitHub",
-    "Docker",
-    "HTML/CSS",
-    "REST APIs",
-    "Gemini API",
-    "OpenAI"
+    "REST APIs"
   ],
   "experience": [
     {

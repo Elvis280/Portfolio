@@ -89,6 +89,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -753,6 +757,14 @@ body {
 
 .p-link.demo::after {
     background: var(--accent-primary);
+}
+
+.p-link.case-study {
+    color: var(--accent-blue);
+}
+
+.p-link.case-study::after {
+    background: var(--accent-blue);
 }
 
 /* 2.5 SKILLS Styles - Redesigned Simple Grid */
@@ -2018,6 +2030,7 @@ body {
         display: none;
     }
 }
+
 /* ========================================
    MOBILE UI FIXES
    ======================================== */
@@ -2037,7 +2050,7 @@ body {
     pointer-events: none;
 }
 
-.overlay-ui > * {
+.overlay-ui>* {
     pointer-events: auto;
 }
 
@@ -2047,15 +2060,15 @@ body {
         padding: 8px;
         margin-right: 10px;
     }
-    
+
     .logo {
         font-size: 1.5rem;
     }
-    
+
     .main-title h1 {
         font-size: 2.5rem;
     }
-    
+
     .nav-links a {
         font-size: 1rem;
     }
@@ -2066,22 +2079,23 @@ body {
    ======================================== */
 
 @media (max-width: 768px) {
+
     /* Fix: Contact section - 2x2 grid instead of 4 columns */
     .contact-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px;
     }
-    
+
     .contact-card {
         min-height: 150px;
         padding: 20px 15px;
     }
-    
+
     .contact-value {
         font-size: 0.85rem;
         word-break: break-word;
     }
-    
+
     /* Fix: Hamburger larger hit area */
     .hamburger {
         padding: 15px !important;
@@ -2090,39 +2104,39 @@ body {
         min-height: 50px;
         justify-content: center;
     }
-    
+
     .hamburger span {
         width: 28px;
         height: 3px;
     }
-    
+
     /* Fix: Hero section - prevent text overlap with HUD */
     .hero-content {
         padding: 20px;
         margin-bottom: 80px;
     }
-    
+
     .main-title h1 {
         font-size: 2rem !important;
         margin: 20px 0;
     }
-    
+
     .footer-data {
         bottom: 10px !important;
         left: 10px !important;
         gap: 15px;
         font-size: 0.7rem;
     }
-    
+
     .data-block {
         min-width: auto;
     }
-    
+
     /* Fix: Better mobile spacing */
     .module {
         padding: 30px 15px !important;
     }
-    
+
     .header {
         padding: 10px 15px !important;
     }
@@ -2134,32 +2148,32 @@ body {
         min-height: 60vh !important;
         padding: 40px 15px !important;
     }
-    
+
     .main-title h1 {
         font-size: 1.8rem !important;
         margin: 15px 0 !important;
     }
-    
+
     .hero-content h1 {
         font-size: 1.5rem !important;
     }
-    
+
     .hero-content .subtitle {
         font-size: 0.9rem !important;
         margin-bottom: 10px;
     }
-    
+
     .hero-content p {
         font-size: 0.85rem !important;
         line-height: 1.4;
         margin: 10px 0;
     }
-    
+
     .profile-image-wrapper {
         width: 120px !important;
         height: 120px !important;
     }
-    
+
     .profile-container {
         gap: 15px;
     }
@@ -2171,15 +2185,15 @@ body {
         font-size: 1.5rem !important;
         letter-spacing: 2px;
     }
-    
+
     .hero-content h1 {
         font-size: 1.2rem !important;
     }
-    
+
     .hero-content .subtitle {
         font-size: 0.8rem !important;
     }
-    
+
     .hero-content p {
         font-size: 0.75rem !important;
     }
@@ -2214,27 +2228,54 @@ body {
 
 /* Fix: Revert profile pic size and make hero text smaller on mobile */
 @media (max-width: 768px) {
+
     /* Remove profile pic size override - let it stay original size */
     .profile-image-wrapper {
         width: auto !important;
         height: auto !important;
     }
-    
+
     /* Make hero text even smaller */
     .main-title h1 {
         font-size: 1.5rem !important;
     }
-    
+
     .hero-content h1 {
         font-size: 1.2rem !important;
     }
-    
+
     .hero-content .subtitle {
         font-size: 0.75rem !important;
     }
-    
+
     .hero-content p {
         font-size: 0.75rem !important;
         line-height: 1.3;
     }
+}
+
+/* Clickable Contact Cards Styling */
+a.contact-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 5px 15px rgba(0, 255, 170, 0.1);
+}
+
+a.contact-card .contact-icon {
+    transition: transform 0.3s ease;
+}
+
+a.contact-card:hover .contact-icon {
+    transform: scale(1.1);
 }

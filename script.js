@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         container.innerHTML = projects.map(project => `
             <div class="p-card">
-                <div class="p-preview" style="background: linear-gradient(135deg, ${getProjectGradient(project.id)});">
+                <div class="p-preview" style="${project.image && !project.image.includes('project-') ? `background: url('${project.image}') center/cover no-repeat;` : `background: linear-gradient(135deg, ${getProjectGradient(project.id)});`}">
                     <div class="p-preview-overlay">
                         <span class="preview-icon">🚀</span>
                     </div>
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${project.techStack.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
                     </div>
                     <div class="p-links">
-                        ${project.github ? `<a href="${project.github}" target="_blank" class="p-link">GitHub →</a>` : ''}
+                        ${project.github ? `<a href="${project.github}" target="_blank" class="p-link case-study">GitHub Repo →</a>` : ''}
                         ${project.demo ? `<a href="${project.demo}" target="_blank" class="p-link demo">Live Demo →</a>` : ''}
                     </div>
                 </div>
@@ -157,7 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'git': 'git',
             'github': 'github',
             'docker': 'docker',
-            'html/css': 'html5'
+            'html/css': 'html5',
+            'figma': 'figma',
+            'canva': 'canva',
+            'adobe express': 'adobe'
         };
 
         const normalized = techName.toLowerCase();
