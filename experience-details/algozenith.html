@@ -143,22 +143,81 @@
         <h2 class="section-title">// EVENTS_GALLERY</h2>
         <div class="photo-grid">
             <div class="photo-item">
-                <div class="photo-placeholder">📸 Add Event Photo 1</div>
-                <div class="photo-caption">Coding Workshop - September 2025</div>
+                <img src="../images/AlgoZ1.jpg" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
             </div>
             <div class="photo-item">
-                <div class="photo-placeholder">📸 Add Event Photo 2</div>
-                <div class="photo-caption">DSA Problem Solving Session</div>
+                <img src="../images/AlgoZ2.jpeg" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
             </div>
             <div class="photo-item">
-                <div class="photo-placeholder">📸 Add Event Photo 3</div>
-                <div class="photo-caption">Team Meeting - October 2025</div>
+                <img src="../images/AlgoZ3.jpg" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
             </div>
             <div class="photo-item">
-                <div class="photo-placeholder">📸 Add Event Photo 4</div>
-                <div class="photo-caption">Competition Preparation</div>
+                <img src="../images/AlgoZ4.jpg" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="photo-item">
+                <img src="../images/AlgoZ5.jpg" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="photo-item">
+                <img src="../images/AlgoZ6.jpg" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="photo-item hidden-photo">
+                <img src="../images/AlgoZ7.jpg" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="photo-item hidden-photo">
+                <img src="../images/AlgoZ8.JPG" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="photo-item hidden-photo">
+                <img src="../images/AlgoZ9.JPEG" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="photo-item hidden-photo">
+                <img src="../images/AlgoZ10.JPG" alt="AlgoZenith Event"
+                    style="width: 100%; height: 250px; object-fit: cover;">
             </div>
         </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button id="viewMoreBtn" onclick="togglePhotos()" style="
+                padding: 12px 30px;
+                background: rgba(0, 243, 255, 0.1);
+                border: 1px solid #00f3ff;
+                color: #00f3ff;
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-family: 'Courier New', monospace;
+            ">VIEW MORE PHOTOS →</button>
+        </div>
+
+        <script>
+            function togglePhotos() {
+                const hiddenPhotos = document.querySelectorAll('.hidden-photo');
+                const btn = document.getElementById('viewMoreBtn');
+                const isHidden = hiddenPhotos[0].style.display === 'none' || hiddenPhotos[0].style.display === '';
+
+                hiddenPhotos.forEach(photo => {
+                    photo.style.display = isHidden ? 'block' : 'none';
+                });
+
+                btn.textContent = isHidden ? 'VIEW LESS ←' : 'VIEW MORE PHOTOS →';
+            }
+
+            // Hide photos on page load
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('.hidden-photo').forEach(photo => {
+                    photo.style.display = 'none';
+                });
+            });
+        </script>
 
         <h2 class="section-title">// SKILLS_GAINED</h2>
         <p>Leadership • Public Speaking • DSA Teaching • Team Coordination • Event Management</p>

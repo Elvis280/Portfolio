@@ -32,9 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = projects.map(project => `
             <div class="p-card">
                 <div class="p-preview" style="${project.image && !project.image.includes('project-') ? `background: url('${project.image}') center/cover no-repeat;` : `background: linear-gradient(135deg, ${getProjectGradient(project.id)});`}">
-                    <div class="p-preview-overlay">
-                        <span class="preview-icon">🚀</span>
-                    </div>
                 </div>
                 <div class="p-content">
                     <div class="p-header">${project.name}</div>
@@ -43,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${project.techStack.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
                     </div>
                     <div class="p-links">
-                        ${project.github ? `<a href="${project.github}" target="_blank" class="p-link case-study">GitHub Repo →</a>` : ''}
+                        ${project.caseStudyPage ? `<a href="${project.caseStudyPage}" class="p-link case-study">Case Study →</a>` : ''}
                         ${project.demo ? `<a href="${project.demo}" target="_blank" class="p-link demo">Live Demo →</a>` : ''}
                     </div>
                 </div>
@@ -138,26 +135,54 @@ document.addEventListener('DOMContentLoaded', () => {
     function getTechInfo(techName) {
         // Map technology names to Simple Icons slugs
         const iconMap = {
+            // Programming Languages
             'python': 'python',
             'javascript': 'javascript',
             'typescript': 'typescript',
-            'sql': 'mysql',
-            'node.js': 'nodedotjs',
-            'fastapi': 'fastapi',
-            'flask': 'flask',
+
+            // Frontend Frameworks
             'react': 'react',
             'next.js': 'nextdotjs',
-            'rest apis': 'postman',
-            'gemini api': 'googlegemini',
-            'openai': 'openai',
-            'prompt engineering': 'openai',
-            'agent workflows': 'probot',
-            'rag systems': 'databricks',
+            'html/css': 'html5',
+
+            // Backend Frameworks
+            'node.js': 'nodedotjs',
+            'express.js': 'express',
+            'fastapi': 'fastapi',
+            'flask': 'flask',
+
+            // Databases
             'mysql': 'mysql',
+            'mongodb': 'mongodb',
+            'postgresql': 'postgresql',
+
+            // APIs & Tools
+            'rest apis': 'postman',
+            'graphql': 'graphql',
             'git': 'git',
             'github': 'github',
             'docker': 'docker',
-            'html/css': 'html5',
+
+            // Cloud Platforms
+            'aws': 'amazonaws',
+            'google cloud': 'googlecloud',
+            'vercel': 'vercel',
+
+            // AI/ML Technologies
+            'tensorflow': 'tensorflow',
+            'pytorch': 'pytorch',
+            'langchain': 'langchain',
+            'openai apis': 'openai',
+            'gemini api': 'googlegemini',
+            'ai agents': 'probot',
+            'llm integration': 'openai',
+            'machine learning': 'scikitlearn',
+
+            // Computer Science Fundamentals
+            'data structures': 'databricks',
+            'algorithms': 'thealgorithms',
+
+            // Design Tools (legacy, if needed)
             'figma': 'figma',
             'canva': 'canva',
             'adobe express': 'adobe'
@@ -209,35 +234,39 @@ document.addEventListener('DOMContentLoaded', () => {
         certCarousel.totalCerts = certificates.length;
 
         container.innerHTML = certificates.map(cert => `
-            <div class="cert-card ${cert.verified ? 'verified' : ''}">
-                ${cert.image ? `
-                    <div class="cert-image-wrapper">
-                        <img src="${cert.image}" alt="${cert.name}" loading="lazy" class="cert-full-image">
-                        <div class="cert-overlay">
-                            <div class="cert-badge-overlay">
-                                ${cert.verified ? '✓' : '📜'}
-                            </div>
-                            <div class="cert-overlay-content">
-                                <h4>${cert.name}</h4>
-                                <div class="cert-issuer">${cert.issuer}</div>
-                                <div class="cert-date">${cert.date}</div>
-                                ${cert.skills ? `
-                                    <div class="cert-skills">
-                                        <strong>Skills:</strong>
-                                        <div class="cert-skill-tags">
-                                            ${cert.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                                        </div>
-                                    </div>
-                                ` : ''}
-                                ${cert.credentialUrl ? `
-                                    <a href="${cert.credentialUrl}" target="_blank" class="cert-link-overlay">
-                                        View Credential →
-                                    </a>
-                                ` : ''}
-                            </div>
+            <div class="cert-card-glass">
+                <div class="cert-header">
+                    <div class="cert-status ${cert.verified ? 'verified' : 'pending'}">
+                        <span class="status-dot"></span>
+                        ${cert.verified ? 'VERIFIED' : 'PENDING'}
+                    </div>
+                    ${cert.credentialUrl ? `<a href="${cert.credentialUrl}" target="_blank" class="cert-link-icon" title="View Credential">↗</a>` : ''}
+                </div>
+                
+                <div class="cert-body">
+                    <div class="cert-thumb">
+                        ${cert.image ? `<img src="${cert.image}" alt="${cert.name}" loading="lazy">` : '<div class="cert-placeholder">📄</div>'}
+                    </div>
+                    
+                    <div class="cert-info">
+                        <h4>${cert.name}</h4>
+                        <div class="cert-issuer">
+                            <span class="data-label">ISSUER:</span> ${cert.issuer}
+                        </div>
+                         <div class="cert-date">
+                            <span class="data-label">DATE:</span> ${cert.date}
                         </div>
                     </div>
-                ` : ''}
+                </div>
+
+                <div class="cert-footer">
+                    ${cert.skills ? `
+                        <div class="cert-tags">
+                            ${cert.skills.slice(0, 3).map(skill => `<span class="glass-tag">${skill}</span>`).join('')}
+                            ${cert.skills.length > 3 ? `<span class="glass-tag">+${cert.skills.length - 3}</span>` : ''}
+                        </div>
+                    ` : ''}
+                </div>
             </div>
         `).join('');
 
@@ -288,12 +317,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCertCarousel() {
         const container = document.getElementById('certificates-container');
-        const totalPages = Math.ceil(certCarousel.totalCerts / certCarousel.certsPerPage);
-
         if (container) {
-            // Use pixel-based transform: card width (800px) + gap (30px)
-            const cardWidth = 800;
-            const gap = 30;
+            // Get actual card width from DOM to support responsive sizes
+            const card = container.querySelector('.cert-card-glass');
+            const cardWidth = card ? card.offsetWidth : 800;
+            const gap = 30; // Matches CSS gap
+
             const offset = -certCarousel.currentSlide * (cardWidth + gap);
             container.style.transform = `translateX(${offset}px)`;
         }
@@ -301,15 +330,27 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update dots
         const dots = document.querySelectorAll('#cert-dots .carousel-dot');
         dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === certCarousel.currentSlide);
+            if (index === certCarousel.currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
         });
 
-        // Update button visibility
+        // Update buttons state
         const prevBtn = document.querySelector('.cert-prev');
         const nextBtn = document.querySelector('.cert-next');
 
-        if (prevBtn) prevBtn.style.opacity = certCarousel.currentSlide === 0 ? '0.3' : '1';
-        if (nextBtn) nextBtn.style.opacity = certCarousel.currentSlide === totalPages - 1 ? '0.3' : '1';
+        if (prevBtn) {
+            prevBtn.style.opacity = certCarousel.currentSlide === 0 ? '0.5' : '1';
+            prevBtn.style.pointerEvents = certCarousel.currentSlide === 0 ? 'none' : 'auto';
+        }
+
+        if (nextBtn) {
+            const maxSlide = Math.ceil(certCarousel.totalCerts / certCarousel.certsPerPage) - 1;
+            nextBtn.style.opacity = certCarousel.currentSlide >= maxSlide ? '0.5' : '1';
+            nextBtn.style.pointerEvents = certCarousel.currentSlide >= maxSlide ? 'none' : 'auto';
+        }
     }
 
     // Call the loading function

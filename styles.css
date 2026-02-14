@@ -90,7 +90,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* Removing smooth behavior for snappier scroll as requested */
 }
 
 body {
@@ -103,8 +103,8 @@ body {
 }
 
 .scroll-spacer {
-    height: 2000vh;
-    /* Increased for longer, smoother scrolling */
+    height: 1200vh;
+    /* Reduced from 2000vh to increase scroll speed */
     position: relative;
     /* Changed from absolute - needed to create actual scrollable height */
     width: 100%;
@@ -691,7 +691,7 @@ body {
     color: rgba(246, 244, 242, 0.8);
     line-height: 1.6;
     margin-bottom: 15px;
-    min-height: 80px;
+    min-height: 50px;
 }
 
 /* Tech Stack Badges */
@@ -1336,7 +1336,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 20;
+    z-index: 100;
+    /* Increased from 20 to stay above content sections */
     pointer-events: none;
     display: flex;
     flex-direction: column;
@@ -1406,6 +1407,8 @@ body {
     text-align: center;
     margin-top: -100px;
     /* Offset to sit above the core */
+    pointer-events: none;
+    /* Fix: Allow clicks to pass through to content */
 }
 
 .main-title h1 {
@@ -1433,6 +1436,8 @@ body {
     align-items: flex-end;
     font-family: monospace;
     font-size: 0.9rem;
+    pointer-events: none;
+    /* Fix: Allow clicks to pass through */
 }
 
 .data-block {
@@ -1562,174 +1567,202 @@ body {
     }
 }
 
-/* Image Wrapper - Full card size */
-.cert-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 243, 255, 0.2);
+/* ========================================
+   Redesigned Certificates - Glass Data Plate
+   ======================================== */
+
+.certificates-carousel {
+    width: 800px;
+    /* Matches JS calculation */
+    overflow: visible;
 }
 
-/* Full Certificate Image */
-.cert-full-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
-    transition: transform 0.3s ease;
+.certificates-grid {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Hover Overlay with Blur */
-.cert-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(5, 2, 10, 0.15);
-    backdrop-filter: blur(0px);
+.cert-card-glass {
+    width: 800px;
+    /* Matches JS calculation */
+    min-width: 800px;
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 125, 54, 0.3);
+    border-radius: 16px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.4s ease;
-    padding: 30px;
-}
-
-.cert-card:hover .cert-overlay {
-    opacity: 1;
-    backdrop-filter: blur(10px);
-    background: rgba(5, 2, 10, 0.85);
-}
-
-.cert-card:hover .cert-full-image {
-    transform: scale(1.05);
-}
-
-/* Badge on Overlay */
-.cert-badge-overlay {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--accent-secondary);
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    font-weight: bold;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
-}
-
-/* Overlay Content */
-.cert-overlay-content {
-    text-align: center;
-    color: #fff;
-    z-index: 2;
-}
-
-.cert-overlay-content h4 {
-    color: var(--accent-primary);
-    font-size: 1.1rem;
-    margin: 0 0 10px 0;
-    letter-spacing: 1px;
-}
-
-.cert-overlay-content .cert-issuer {
-    color: var(--accent-secondary);
-    font-size: 0.85rem;
-    margin-bottom: 6px;
-    font-weight: 500;
-}
-
-.cert-overlay-content .cert-date {
-    color: #aaa;
-    font-size: 0.75rem;
-    margin-bottom: 15px;
-}
-
-/* Skills Section on Hover */
-.cert-skills {
-    margin: 12px 0;
-    text-align: center;
-}
-
-.cert-skills strong {
-    color: var(--accent-primary);
-    font-size: 0.8rem;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.cert-skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: center;
-}
-
-.skill-tag {
-    background: rgba(0, 243, 255, 0.15);
-    border: 1px solid var(--accent-secondary);
-    color: var(--accent-secondary);
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-    background: rgba(0, 243, 255, 0.3);
-    transform: translateY(-2px);
-}
-
-/* View Credential Link on Overlay */
-.cert-link-overlay {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 20px;
-    background: rgba(0, 243, 255, 0.2);
-    border: 1px solid var(--accent-secondary);
-    color: var(--accent-secondary);
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.cert-link-overlay:hover {
-    background: rgba(0, 243, 255, 0.4);
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-    transform: translateY(-2px);
-}
-
-/* Certificate Image Wrapper - Transparent Background */
-.cert-image-wrapper {
+    gap: 20px;
     position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 3px solid var(--accent-secondary);
-    box-shadow: 0 0 25px rgba(0, 243, 255, 0.4), inset 0 0 50px rgba(0, 243, 255, 0.1);
-    background: transparent;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 125, 54, 0.05);
+    transition: all 0.3s ease;
 }
 
-.cert-full-image {
+.cert-card-glass:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 15px 50px rgba(255, 125, 54, 0.15),
+        inset 0 0 30px rgba(255, 125, 54, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Header: Status and Link */
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.cert-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.cert-status.verified {
+    color: var(--accent-secondary);
+}
+
+.cert-status.pending {
+    color: var(--accent-primary);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 10px currentColor;
+    animation: pulse-status 2s infinite;
+}
+
+@keyframes pulse-status {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.cert-link-icon {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cert-link-icon:hover {
+    color: var(--accent-secondary);
+    background: rgba(0, 243, 255, 0.1);
+    transform: rotate(45deg);
+}
+
+/* Body: Image and Info */
+.cert-body {
+    display: flex;
+    gap: 30px;
+}
+
+.cert-thumb {
+    width: 240px;
+    height: 160px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.cert-thumb img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: transparent;
-    transition: transform 0.3s ease;
+    background: #000;
+}
+
+.cert-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.cert-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cert-info h4 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.cert-issuer,
+.cert-date {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.data-label {
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    font-family: monospace;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Footer: Tags */
+.cert-footer {
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.glass-tag {
+    background: rgba(255, 125, 54, 0.1);
+    border: 1px solid rgba(255, 125, 54, 0.3);
+    color: var(--accent-primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    letter-spacing: 1px;
 }
 
 /* Add spacing to push experience section lower */
@@ -1743,33 +1776,51 @@ body {
 
 /* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
-    .cert-card {
+    .cert-card-glass {
         width: 600px;
         min-width: 600px;
-        max-width: 600px;
     }
 
     .certificates-carousel {
         width: 600px;
-        max-width: 600px;
     }
 
-    .cert-image-wrapper {
-        height: 350px;
+    .cert-thumb {
+        width: 200px;
+        height: 140px;
+    }
+
+    .cert-info h4 {
+        font-size: 1.3rem;
     }
 }
 
 /* Mobile Landscape & Small Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-    .cert-card {
+    .cert-card-glass {
         width: 90vw;
         min-width: 90vw;
-        max-width: 500px;
+        flex-direction: column;
+        height: auto;
     }
 
     .certificates-carousel {
         width: 90vw;
-        max-width: 500px;
+    }
+
+    .cert-body {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cert-thumb {
+        width: 100%;
+        height: 200px;
+    }
+
+    .cert-info {
+        text-align: center;
+        align-items: center;
     }
 
     .cert-carousel-wrapper {
@@ -1782,10 +1833,6 @@ body {
         font-size: 1.5rem;
     }
 
-    .cert-image-wrapper {
-        height: 300px;
-    }
-
     .experience-module {
         margin-top: 60px;
     }
@@ -1793,43 +1840,42 @@ body {
 
 /* Mobile Portrait (max-width: 480px) */
 @media (max-width: 480px) {
-    .cert-card {
+    .cert-card-glass {
         width: 95vw;
         min-width: 95vw;
-        max-width: 95vw;
+        padding: 20px;
     }
 
     .certificates-carousel {
         width: 95vw;
-        max-width: 95vw;
     }
 
-    .cert-carousel-wrapper {
-        gap: 5px;
+    .cert-thumb {
+        height: 180px;
     }
 
-    .cert-carousel-btn {
-        width: 35px;
-        height: 35px;
+    .cert-info h4 {
         font-size: 1.2rem;
     }
 
-    .cert-image-wrapper {
-        height: 250px;
-        border-width: 2px;
+    .glass-tag {
+        font-size: 0.7rem;
+        padding: 4px 10px;
     }
 
-    .cert-overlay-content h4 {
-        font-size: 1rem;
+    .cert-footer {
+        display: none;
+        /* Hide tags on very small screens if needed, or wrap */
     }
 
-    .cert-skill-tags {
-        gap: 4px;
+    .cert-tags {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .skill-tag {
-        font-size: 0.6rem;
-        padding: 3px 8px;
+    .cert-footer {
+        display: block;
+        /* Restore tags */
     }
 
     .experience-module {
@@ -1917,26 +1963,7 @@ body {
         max-width: 100%;
     }
 
-    /* Certificates */
-    .cert-carousel-wrapper {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .certificates-carousel {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .cert-card {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    .cert-image-wrapper {
-        height: 300px;
-    }
+    /* Certificates logic handled above */
 
     .cert-carousel-btn {
         width: 40px;
@@ -1975,13 +2002,11 @@ body {
     /* Certificates */
     .certificates-carousel {
         width: 600px;
-        max-width: 600px;
     }
 
-    .cert-card {
+    .cert-card-glass {
         width: 600px;
         min-width: 600px;
-        max-width: 600px;
     }
 
     .experience-module {
@@ -2052,6 +2077,12 @@ body {
 
 .overlay-ui>* {
     pointer-events: auto;
+}
+
+/* Fix: Ensure title and footer don't block content */
+.main-title,
+.footer-data {
+    pointer-events: none !important;
 }
 
 /* Fix: Better mobile proportions */

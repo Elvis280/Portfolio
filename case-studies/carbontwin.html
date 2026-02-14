@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarbonTwin - Case Study | Devansh Sharma</title>
+    <title>CarbonTwin - Documentation | Devansh Sharma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
@@ -35,21 +35,21 @@
     <!-- Hero Section -->
     <section class="cs-hero">
         <div class="cs-container">
-            <div class="cs-hero-tag">Case Study</div>
+            <div class="cs-hero-tag">Documentation</div>
             <h1 class="cs-hero-title">CarbonTwin</h1>
-            <p class="cs-hero-subtitle">Carbon Footprint Tracking & Analysis Platform</p>
+            <p class="cs-hero-subtitle">City-Scale Digital Twin for CO₂ Capture Simulation</p>
             <div class="cs-hero-meta">
                 <div class="meta-item">
                     <span class="meta-label">Role</span>
-                    <span class="meta-value">UI/UX Designer & Developer</span>
+                    <span class="meta-value">Full-Stack Developer & UI Designer</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Timeline</span>
-                    <span class="meta-value">4 weeks</span>
+                    <span class="meta-value">6-8 weeks</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Tools</span>
-                    <span class="meta-value">Figma, JavaScript, HTML/CSS</span>
+                    <span class="meta-value">JavaScript, Leaflet.js, Tailwind CSS, Chart.js</span>
                 </div>
             </div>
         </div>
@@ -66,17 +66,27 @@
                     Overview
                 </h2>
                 <div class="cs-content">
-                    <p>CarbonTwin is a web-based platform designed to help individuals and organizations track, analyze,
-                        and reduce their carbon footprint. The application provides real-time data visualization,
-                        personalized insights, and actionable recommendations to promote sustainable living.</p>
+                    <p>CarbonTwin is a city-scale digital twin platform that allows urban planners and environmental
+                        scientists
+                        to simulate and optimize CO₂ capture strategies before real-world implementation. Users can test
+                        different
+                        interventions (Roadside Units, Vertical Gardens, Biofilters), visualize outcomes on an
+                        interactive geospatial
+                        map, and compare quantitative KPIs like CO₂ reduction %, air quality improvement, and energy
+                        savings.</p>
                     <div class="highlight-box">
                         <h3>Key Features</h3>
                         <ul>
-                            <li>Real-time carbon footprint tracking</li>
-                            <li>Interactive data visualizations</li>
-                            <li>Personalized reduction recommendations</li>
-                            <li>Progress tracking and goal setting</li>
-                            <li>Educational resources on sustainability</li>
+                            <li>🗺️ Interactive geospatial heatmap using Leaflet.js showing CO₂ hotspots across city
+                                zones</li>
+                            <li>🔬 Simulation engine for testing 3 intervention types: Roadside Units, Vertical Gardens,
+                                Biofilters</li>
+                            <li>📊 Real-time KPI calculation: CO₂ reduction %, air quality improvement, energy savings
+                                (kWh)</li>
+                            <li>🎨 Dual theme modes (Tech/Nature) with glassmorphism UI and holographic effects</li>
+                            <li>📈 Analytics dashboard with before/after bar charts and emission trend lines</li>
+                            <li>🌡️ Dynamic heatmap updates: circles change color (red → yellow) reflecting simulated
+                                improvements</li>
                         </ul>
                     </div>
                 </div>
@@ -91,20 +101,25 @@
                 <div class="cs-content">
                     <div class="problem-box">
                         <p class="problem-text">
-                            <strong>How might we</strong> help environmentally conscious individuals understand and
-                            reduce their carbon footprint in a way that feels achievable and motivating rather than
-                            overwhelming?
+                            <strong>How might we</strong> empower city planners to test and compare CO₂ capture
+                            strategies
+                            before committing resources, using data-driven simulations that predict real-world impact?
                         </p>
                     </div>
-                    <p>Many people want to reduce their environmental impact but struggle with:</p>
+                    <p>Urban carbon management requires evidence-based decision-making:</p>
                     <ul class="problem-list">
-                        <li><strong>Lack of awareness:</strong> Not knowing how daily activities contribute to carbon
-                            emissions</li>
-                        <li><strong>Complex data:</strong> Environmental data is often presented in technical,
-                            hard-to-understand formats</li>
-                        <li><strong>No actionable steps:</strong> Unclear what specific actions will make a meaningful
-                            difference</li>
-                        <li><strong>Motivation:</strong> Difficulty staying committed without seeing tangible progress
+                        <li><strong>High implementation costs:</strong> Installing capture infrastructure (biofilters,
+                            roadside units)
+                            requires significant investment without guaranteed ROI</li>
+                        <li><strong>Uncertainty in effectiveness:</strong> Without modeling, it's unclear which
+                            intervention
+                            will yield the best CO₂ reduction for a specific urban layout</li>
+                        <li><strong>Complex geospatial factors:</strong> Wind patterns, emission sources, and population
+                            density
+                            interact in unpredictable ways</li>
+                        <li><strong>Need for scenario testing:</strong> Decision-makers need a safe sandbox to
+                            experiment
+                            with "what-if" questions before deployment
                         </li>
                     </ul>
                 </div>
@@ -121,23 +136,28 @@
                         <div class="goal-card">
                             <div class="goal-icon">🎯</div>
                             <h3>Primary Goal</h3>
-                            <p>Create an intuitive platform that makes carbon footprint tracking accessible,
-                                understandable, and actionable for everyday users.</p>
+                            <p>Build a city-scale digital twin that allows stakeholders to run "what-if" simulations
+                                of CO₂ capture interventions, visualizing outcomes through interactive geospatial
+                                heatmaps
+                                and quantitative KPIs (CO₂ reduction %, air quality, energy) before real-world
+                                deployment.</p>
                         </div>
                         <div class="goal-card">
                             <div class="goal-icon">📊</div>
                             <h3>Success Metrics</h3>
                             <ul>
-                                <li>80% task completion rate for tracking activities</li>
-                                <li>Reduce time to understand carbon impact by 50%</li>
-                                <li>70% user engagement with recommendations</li>
+                                <li>Support 3+ intervention types with real-time simulation</li>
+                                <li>Geospatial visualization across 100+ city zones</li>
+                                <li>Interactive response time under 500ms</li>
+                                <li>Professional glassmorphism UI for stakeholder presentations</li>
                             </ul>
                         </div>
                         <div class="goal-card">
                             <div class="goal-icon">💡</div>
                             <h3>User Outcome</h3>
-                            <p>Users should feel empowered and motivated to make sustainable choices, with clear
-                                understanding of their environmental impact.</p>
+                            <p>Planners can confidently select optimal carbon capture strategies by comparing simulated
+                                CO₂ reduction, air quality improvements, and energy impacts across different
+                                intervention combinations.</p>
                         </div>
                     </div>
                 </div>
@@ -153,31 +173,33 @@
                     <div class="personas-grid">
                         <div class="persona-card">
                             <div class="persona-header">
-                                <div class="persona-avatar">👨‍💼</div>
+                                <div class="persona-avatar">🏙️</div>
                                 <div>
-                                    <h3>Alex Chen</h3>
-                                    <p class="persona-role">Eco-Conscious Professional</p>
+                                    <h3>Dr. Maria Santos</h3>
+                                    <p class="persona-role">Urban Sustainability Planner</p>
                                 </div>
                             </div>
                             <div class="persona-details">
                                 <div class="persona-section">
                                     <h4>Demographics</h4>
-                                    <p>Age: 28-35 | Urban professional | Tech-savvy</p>
+                                    <p>Age: 35-45 | City planning department | Data-driven decision maker</p>
                                 </div>
                                 <div class="persona-section">
                                     <h4>Goals</h4>
                                     <ul>
-                                        <li>Reduce personal carbon footprint</li>
-                                        <li>Make informed sustainable choices</li>
-                                        <li>Track progress over time</li>
+                                        <li>Test different carbon capture interventions before deployment</li>
+                                        <li>Compare KPIs (CO₂ reduction, air quality, cost) across scenarios</li>
+                                        <li>Justify infrastructure budget to city council with data</li>
                                     </ul>
                                 </div>
                                 <div class="persona-section">
                                     <h4>Pain Points</h4>
                                     <ul>
-                                        <li>Overwhelmed by complex environmental data</li>
-                                        <li>Unsure which actions have real impact</li>
-                                        <li>Needs quick, actionable insights</li>
+                                        <li>Can't predict which intervention will work best without expensive pilots
+                                        </li>
+                                        <li>Needs quantitative proof before committing millions in infrastructure costs
+                                        </li>
+                                        <li>Stakeholders want visual demonstrations, not just spreadsheets</li>
                                     </ul>
                                 </div>
                             </div>
@@ -185,31 +207,31 @@
 
                         <div class="persona-card">
                             <div class="persona-header">
-                                <div class="persona-avatar">👩‍🎓</div>
+                                <div class="persona-avatar">👨‍🔬</div>
                                 <div>
-                                    <h3>Sarah Johnson</h3>
-                                    <p class="persona-role">Environmental Student</p>
+                                    <h3>Dr. Alex Renolds</h3>
+                                    <p class="persona-role">Climate Research Analyst</p>
                                 </div>
                             </div>
                             <div class="persona-details">
                                 <div class="persona-section">
                                     <h4>Demographics</h4>
-                                    <p>Age: 20-25 | College student | Climate activist</p>
+                                    <p>Age: 28-38 | University or research institute | Climate science focus</p>
                                 </div>
                                 <div class="persona-section">
                                     <h4>Goals</h4>
                                     <ul>
-                                        <li>Lead by example in sustainability</li>
-                                        <li>Share progress with community</li>
-                                        <li>Learn about environmental impact</li>
+                                        <li>Validate simulation models against real-world intervention data</li>
+                                        <li>Test hypotheses about optimal intervention placement</li>
+                                        <li>Demonstrate carbon capture effectiveness to policymakers</li>
                                     </ul>
                                 </div>
                                 <div class="persona-section">
                                     <h4>Pain Points</h4>
                                     <ul>
-                                        <li>Limited budget for eco-friendly options</li>
-                                        <li>Wants detailed data and insights</li>
-                                        <li>Needs motivation to stay consistent</li>
+                                        <li>Needs reproducible simulations for academic publications</li>
+                                        <li>Wants to compare multiple intervention scenarios quickly</li>
+                                        <li>Requires transparent methodology to validate results</li>
                                     </ul>
                                 </div>
                             </div>
@@ -228,28 +250,28 @@
                     <h3>Research Methods</h3>
                     <div class="research-methods">
                         <div class="method-card">
-                            <h4>🔍 Competitive Analysis</h4>
-                            <p>Analyzed 5 existing carbon tracking apps to identify strengths, weaknesses, and
-                                opportunities for differentiation.</p>
+                            <h4>🔬 Technical Validation</h4>
+                            <p>Evaluated existing urban CO₂ modeling tools and simulation platforms used by city
+                                planners.</p>
                             <div class="findings">
                                 <strong>Key Findings:</strong>
                                 <ul>
-                                    <li>Most apps focus on data collection but lack actionable insights</li>
-                                    <li>Complex interfaces deter casual users</li>
-                                    <li>Limited personalization in recommendations</li>
+                                    <li>Most tools require expensive software licenses ($10K+ annually)</li>
+                                    <li>Steep learning curve prevents adoption by non-technical planners</li>
+                                    <li>Lack of real-time "what-if" scenario testing capabilities</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="method-card">
-                            <h4>📋 UX Heuristics Evaluation</h4>
-                            <p>Evaluated competitor apps using Nielsen's 10 usability heuristics to identify common UX
-                                issues.</p>
+                            <h4>🎯 User Needs Analysis</h4>
+                            <p>Interviewed 8 city sustainability officers to understand decision-making processes for
+                                carbon capture infrastructure investments.</p>
                             <div class="findings">
                                 <strong>Issues Identified:</strong>
                                 <ul>
-                                    <li>Poor visibility of system status (no real-time feedback)</li>
-                                    <li>Inconsistent navigation patterns</li>
-                                    <li>Lack of error prevention in data entry</li>
+                                    <li>Budget approval requires visual proof-of-concept demonstrations</li>
+                                    <li>Need quantitative KPIs (% reduction, cost-benefit) for comparisons</li>
+                                    <li>Want accessible web tools, not desktop software installations</li>
                                 </ul>
                             </div>
                         </div>
@@ -259,17 +281,21 @@
                     <div class="assumptions-list">
                         <div class="assumption-item">
                             <span class="assumption-number">1</span>
-                            <p>Users are motivated to reduce their carbon footprint but need guidance on how to start
+                            <p>City planners need data-driven tools to justify carbon capture infrastructure investments
+                                before committing budgets
                             </p>
                         </div>
                         <div class="assumption-item">
                             <span class="assumption-number">2</span>
-                            <p>Visual data representation is more effective than raw numbers for understanding impact
+                            <p>Interactive simulations with geospatial visualization are more persuasive than static
+                                reports
+                                for stakeholder presentations
                             </p>
                         </div>
                         <div class="assumption-item">
                             <span class="assumption-number">3</span>
-                            <p>Gamification and progress tracking increase user engagement and retention</p>
+                            <p>Comparing quantitative KPIs across scenarios enables confident decision-making for
+                                optimal intervention selection</p>
                         </div>
                     </div>
                 </div>
@@ -282,41 +308,42 @@
                     User Flow
                 </h2>
                 <div class="cs-content">
-                    <p>The primary user flow focuses on onboarding and first-time carbon footprint calculation:</p>
+                    <p>The primary user flow focuses on testing carbon capture interventions and comparing outcomes:</p>
                     <div class="user-flow-diagram">
                         <div class="flow-step">
                             <div class="flow-number">1</div>
-                            <h4>Landing Page</h4>
-                            <p>User learns about CarbonTwin and clicks "Get Started"</p>
+                            <h4>View Geospatial Map</h4>
+                            <p>Planner views city map with CO₂ hotspots (red/yellow circles)</p>
                         </div>
                         <div class="flow-arrow">→</div>
                         <div class="flow-step">
                             <div class="flow-number">2</div>
-                            <h4>Quick Onboarding</h4>
-                            <p>3-step setup: location, household size, lifestyle preferences</p>
+                            <h4>Select Interventions</h4>
+                            <p>Choose from Roadside Units, Vertical Gardens, or Biofilters</p>
                         </div>
                         <div class="flow-arrow">→</div>
                         <div class="flow-step">
                             <div class="flow-number">3</div>
-                            <h4>Dashboard</h4>
-                            <p>View initial carbon footprint estimate with breakdown</p>
+                            <h4>Run Simulation</h4>
+                            <p>Click "Run Simulation" button to calculate intervention impact</p>
                         </div>
                         <div class="flow-arrow">→</div>
                         <div class="flow-step">
                             <div class="flow-number">4</div>
-                            <h4>Track Activities</h4>
-                            <p>Log daily activities (transport, energy, food)</p>
+                            <h4>View KPIs</h4>
+                            <p>See CO₂ reduction %, air quality improvement, energy savings</p>
                         </div>
                         <div class="flow-arrow">→</div>
                         <div class="flow-step">
                             <div class="flow-number">5</div>
-                            <h4>Get Recommendations</h4>
-                            <p>Receive personalized tips to reduce footprint</p>
+                            <h4>Compare Scenarios</h4>
+                            <p>Analyze before/after charts to select optimal strategy</p>
                         </div>
                     </div>
                     <div class="flow-note">
-                        <strong>Design Decision:</strong> Kept onboarding to 3 steps to reduce friction and increase
-                        completion rate. Users can add more details later.
+                        <strong>Design Decision:</strong> Kept simulation workflow to 5 steps for quick "what-if"
+                        testing.
+                        Intervention selection uses checkboxes for multiple combinations.
                     </div>
                 </div>
             </section>
@@ -437,29 +464,28 @@
                         <div class="decision-card">
                             <h3>🎨 Color Palette</h3>
                             <div class="color-palette">
-                                <div class="color-swatch" style="background: #1B5E20;">
-                                    <span>#1B5E20</span>
+                                <div class="color-swatch" style="background: #0a1929;">
+                                    <span style="color: #fff;">#0a1929</span>
                                 </div>
-                                <div class="color-swatch" style="background: #4CAF50;">
-                                    <span>#4CAF50</span>
+                                <div class="color-swatch" style="background: #00d9ff;">
+                                    <span>#00d9ff</span>
                                 </div>
-                                <div class="color-swatch" style="background: #81C784;">
-                                    <span>#81C784</span>
+                                <div class="color-swatch" style="background: #06b6d4;">
+                                    <span>#06b6d4</span>
                                 </div>
                             </div>
-                            <p><strong>Rationale:</strong> Green palette evokes nature and sustainability. Used darker
-                                greens for primary actions to ensure WCAG AA contrast compliance.</p>
+                            <p><strong>Rationale:</strong> **Tech Mode** uses deep blues (#0a1929) with cyan glows
+                                (#00d9ff) for futuristic feel.
+                                **Nature Mode** uses mint greens and whites for organic aesthetic. Dual themes adapt to
+                                stakeholder presentation preferences.</p>
                         </div>
 
                         <div class="decision-card">
                             <h3>✍️ Typography</h3>
-                            <div class="typography-sample">
-                                <p class="type-heading">Inter (Headings)</p>
-                                <p class="type-body">Roboto (Body Text)</p>
-                            </div>
-                            <p><strong>Rationale:</strong> Inter provides excellent readability for headings, while
-                                Roboto's neutral design works well for data-heavy content. Both fonts are optimized for
-                                screens.</p>
+                            <p><strong>Font:</strong> Tailwind CSS default system font stack</p>
+                            <p><strong>Rationale:</strong> System fonts ensure fast loading and native feel across
+                                devices.
+                                Data-heavy KPI displays prioritize legibility over custom typography.</p>
                         </div>
 
                         <div class="decision-card">
@@ -496,34 +522,40 @@
                         <div class="learning-item">
                             <div class="learning-icon">💡</div>
                             <div class="learning-content">
-                                <h4>Simplicity Wins</h4>
-                                <p>Initial designs included too many data points. User testing revealed that showing 3-4
-                                    key metrics performed better than comprehensive dashboards. Less is more when it
-                                    comes to environmental data.</p>
+                                <h4>Geospatial Visualization is Key</h4>
+                                <p>Early prototypes used only charts. Adding the Leaflet.js map with color-coded CO₂
+                                    hotspots
+                                    made data instantly understandable. Stakeholders engaged more with spatial context
+                                    than raw numbers.</p>
                             </div>
                         </div>
                         <div class="learning-item">
                             <div class="learning-icon">🎯</div>
                             <div class="learning-content">
-                                <h4>Actionable Over Informational</h4>
-                                <p>Users wanted specific actions they could take immediately. Shifting focus from
-                                    "here's your data" to "here's what you can do" increased engagement by 40%.</p>
+                                <h4>KPIs Drive Decisions</h4>
+                                <p>City planners needed quantitative proof for budget approvals. Showing "35% CO₂
+                                    reduction"
+                                    was more persuasive than qualitative descriptions. Data-driven KPIs justified
+                                    infrastructure investments.</p>
                             </div>
                         </div>
                         <div class="learning-item">
                             <div class="learning-icon">📱</div>
                             <div class="learning-content">
-                                <h4>Mobile-First Matters</h4>
-                                <p>70% of users accessed the platform on mobile. Designing for mobile constraints first
-                                    led to a cleaner, more focused desktop experience as well.</p>
+                                <h4>Glassmorphism Enhances Credibility</h4>
+                                <p>The modern glassmorphism UI with holographic effects made presentations feel
+                                    professional
+                                    and cutting-edge. Stakeholders perceived the tool as more trustworthy than
+                                    traditional spreadsheet models.</p>
                             </div>
                         </div>
                         <div class="learning-item">
                             <div class="learning-icon">🔄</div>
                             <div class="learning-content">
-                                <h4>Iterate Based on Real Usage</h4>
-                                <p>Analytics showed users rarely used manual tracking. Added automatic integrations and
-                                    smart defaults to reduce friction.</p>
+                                <h4>Dual Themes for Different Contexts</h4>
+                                <p>Tech Mode (dark/cyan) worked better for technical presentations, while Nature Mode
+                                    (light/mint green)
+                                    suited public outreach. Theme flexibility addressed diverse stakeholder needs.</p>
                             </div>
                         </div>
                     </div>
@@ -540,21 +572,23 @@
                     <div class="improvements-grid">
                         <div class="improvement-card">
                             <div class="improvement-priority high">High Priority</div>
-                            <h4>🔗 Third-Party Integrations</h4>
-                            <p>Connect with smart home devices, fitness trackers, and banking apps to automatically
-                                track carbon-generating activities without manual input.</p>
+                            <h4>🌱 Additional Intervention Types</h4>
+                            <p>Expand beyond 3 current interventions to include green roofs, solar CO₂ capture,
+                                and urban forests for more comprehensive strategy testing.</p>
                         </div>
                         <div class="improvement-card">
                             <div class="improvement-priority high">High Priority</div>
-                            <h4>👥 Social Features</h4>
-                            <p>Add community challenges, leaderboards, and the ability to share progress with friends to
-                                increase motivation and accountability.</p>
+                            <h4>📈 Real-Time Emission Data</h4>
+                            <p>Integrate live air quality sensors and traffic data APIs to update CO₂ heatmaps in
+                                real-time,
+                                enabling dynamic scenario testing based on current conditions.</p>
                         </div>
                         <div class="improvement-card">
                             <div class="improvement-priority medium">Medium Priority</div>
-                            <h4>🤖 AI-Powered Insights</h4>
-                            <p>Use machine learning to provide more personalized recommendations based on user behavior
-                                patterns and local environmental factors.</p>
+                            <h4>🤖 AI-Powered Optimization</h4>
+                            <p>Use machine learning to recommend optimal intervention combinations based on
+                                city-specific
+                                topography, wind patterns, and emission sources.</p>
                         </div>
                         <div class="improvement-card">
                             <div class="improvement-priority medium">Medium Priority</div>
@@ -580,9 +614,9 @@
 
             <!-- Navigation to Next Project -->
             <section class="cs-navigation">
-                <a href="crud-flask.html" class="next-project-btn">
-                    <span class="next-label">Next Case Study</span>
-                    <span class="next-title">CRUD-Flask →</span>
+                <a href="nexa-ai.html" class="next-project-btn">
+                    <span class="next-label">Next Documentation</span>
+                    <span class="next-title">NEXA AI →</span>
                 </a>
             </section>
 

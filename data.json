@@ -3,7 +3,7 @@
     {
       "id": "carbontwin",
       "name": "CARBONTWIN",
-      "description": "Designed an intuitive interface for tracking environmental impact. Focused on making complex carbon data easy to understand through clear visual hierarchy, interactive charts, and a clean dashboard layout that guides users toward actionable sustainability goals.",
+      "description": "Full-stack environmental tracking platform with real-time carbon footprint analytics and interactive data visualization dashboards.",
       "image": "images/carbontwin.png",
       "techStack": [
         "JavaScript",
@@ -18,7 +18,7 @@
     {
       "id": "crud-flask",
       "name": "CRUD-FLASK",
-      "description": "Designed a clean admin dashboard interface with focus on data organization and form usability. Created intuitive navigation structure, responsive tables, and user-friendly forms that make data management straightforward and efficient.",
+      "description": "Full-stack admin dashboard with RESTful API endpoints, MySQL database integration, and complete CRUD operations.",
       "image": "images/crud-flask.png",
       "techStack": [
         "Python",
@@ -33,7 +33,7 @@
     {
       "id": "nexa-ai",
       "name": "NEXA_AI",
-      "description": "Designed a conversational interface for AI interactions. Focused on creating clear dialogue patterns, intuitive input methods, and responsive feedback that makes AI feel approachable. Emphasized visual clarity and user control throughout the experience.",
+      "description": "AI-powered conversational agent platform with agentic workflows, LLM integration, and scalable backend infrastructure.",
       "image": "images/nexa-ai.png",
       "techStack": [
         "Python",
@@ -48,7 +48,7 @@
     {
       "id": "ecowaste",
       "name": "ECOWASTE",
-      "description": "Created a visually engaging interface for waste categorization. Used color coding, clear iconography, and intuitive layouts to help users quickly identify proper disposal methods. Designed with sustainability in mind through eco-friendly color palettes and accessible navigation.",
+      "description": "React-based waste categorization system with intelligent classification and real-time state management.",
       "image": "images/ecowaste.png",
       "techStack": [
         "JavaScript",
@@ -63,7 +63,7 @@
     {
       "id": "agrowise",
       "name": "AGROWISE",
-      "description": "Designed an accessible agricultural assistant interface with farmers in mind. Created simple navigation, visual crop guidance, and clear information hierarchy that works well in field conditions. Focused on readability and touch-friendly interactions for mobile use.",
+      "description": "AI-driven agricultural assistant with FastAPI backend, ML models for crop recommendations, and optimized database queries.",
       "image": "images/agrowise.png",
       "techStack": [
         "Python",
@@ -77,21 +77,30 @@
     }
   ],
   "skills": [
-    "Figma",
-    "Canva",
-    "Adobe Express",
-    "HTML/CSS",
+    "Python",
     "JavaScript",
+    "TypeScript",
+    "HTML/CSS",
     "React",
     "Next.js",
-    "TypeScript",
-    "Git",
-    "GitHub",
-    "Python",
     "FastAPI",
     "Flask",
     "MySQL",
-    "REST APIs"
+    "REST APIs",
+    "Git",
+    "GitHub",
+    "Docker",
+    "Google Cloud",
+    "Vercel",
+    "TensorFlow",
+    "PyTorch",
+    "LangChain",
+    "OpenAI APIs",
+    "Gemini API",
+    "AI Agents",
+    "Machine Learning",
+    "Data Structures",
+    "Algorithms"
   ],
   "experience": [
     {
@@ -99,7 +108,7 @@
       "title": "Technical Lead",
       "organization": "AlgoZenith Student Chapter",
       "period": "Aug 2025 – Present",
-      "description": "Leading coding sessions and problem-solving workshops, mentoring peers in programming fundamentals and DSA, and coordinating technical activities with the core team.",
+      "description": "Leading technical workshops on algorithms, data structures, and competitive programming. Architecting coding challenges, mentoring students in problem-solving techniques, and developing automated evaluation systems for programming contests.",
       "current": true,
       "detailsPage": "experience-details/algozenith.html"
     },
@@ -108,7 +117,7 @@
       "title": "Faculty Connect & PR Lead",
       "organization": "GeeksforGeeks Student Chapter",
       "period": "Oct 2024 – Present",
-      "description": "Managing faculty coordination and outreach for technical events, leading promotions to increase participation, and previously contributing as a Technical Coordinator.",
+      "description": "Coordinating technical events and hackathons, managing stakeholder communications, and previously served as Technical Coordinator building full-stack web applications for chapter activities and event management systems.",
       "current": true,
       "detailsPage": "experience-details/gfg.html"
     },
@@ -117,7 +126,7 @@
       "title": "Python Full-Stack Trainee",
       "organization": "SRDT Training Program",
       "period": "2024",
-      "description": "Built full-stack mini-projects using Python and Flask, implemented REST APIs, and worked on CRUD-based backend systems.",
+      "description": "Developed full-stack applications using Python and Flask. Built RESTful APIs with authentication, implemented database schemas with MySQL, created CRUD operations, and deployed web applications with backend optimization.",
       "current": false,
       "detailsPage": "experience-details/srdt.html"
     }
